@@ -9,22 +9,22 @@ Follow this [guide](https://learn.hashicorp.com/tutorials/terraform/install-cli?
 
 ### Check if everything is installed
 ```console
-  foo@bar:~$ terraform -v
-  foo@bar:~$ aws --version
+foo@bar:~$ terraform -v
+foo@bar:~$ aws --version
 ```
 
 ## Usage
 ### Initialize the project and prepare your working directory for other commands
 ```console
-  foo@bar:~$ terraform init
+foo@bar:~$ terraform init
 ```
 ### Show changes required by the current configuration
 ```console
-  foo@bar:~$ terraform plan
+foo@bar:~$ terraform plan
 ```
 ### Create or update infrastructure
 ```console
-  foo@bar:~$ terraform apply
+foo@bar:~$ terraform apply
 ```
 
 ### Get tasks
@@ -33,7 +33,7 @@ Click on `get-tasks` function and the dashboard of function will be shown.
 Now select the api gateway and get your `Api Endpoint`.
 Once you have the API Endpoint run:
 ```console
-  foo@bar:~$ curl <api_endpoint>
+foo@bar:~$ curl <api_endpoint>
 ```
 
 ### Post task
@@ -46,25 +46,26 @@ Show your API key.
 Now with postmap or another tool create your request:
 
 ```console
-  foo@bar:~$ curl --location --request POST '<api_endpoint>' \
+foo@bar:~$ curl --location --request POST '<api_endpoint>' \
   --header 'x-api-key: <api_key>' \
   --header 'Content-Type: application/json' \
   --data-raw '{
       "id": "1",
       "name": "Mohamed",
-      "views": "1"
+      "views": 1,
+      "description": "Task description",
   }'
 ```
 
 ### Destroy previously-created infrastructure
 ```console
-  foo@bar:~$ terraform destroy
+foo@bar:~$ terraform destroy
 ```
 ### In case you modify the source code of lambda functions
 In case you modify the source code of lambda functions remember to zip the new source code.
 ```console
-  foo@bar:~$ zip -vr -j lambda-get.zip lambda-get/* -x "*.DS_Store"
-  foo@bar:~$ zip -vr -j lambda-post.zip lambda-post/* -x "*.DS_Store"
+foo@bar:~$ zip -vr -j lambda-get.zip lambda-get/* -x "*.DS_Store"
+foo@bar:~$ zip -vr -j lambda-post.zip lambda-post/* -x "*.DS_Store"
 ```
 And then update the infrastructure
 
