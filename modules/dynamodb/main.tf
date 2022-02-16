@@ -12,25 +12,5 @@ resource "aws_dynamodb_table" "table" {
       type = "S"
   }
 
-  attribute {
-      name = "name"
-      type = "S"
-  }
-
-  attribute {
-      name = "views"
-      type = "N"
-  }
-
-  global_secondary_index {
-    name               = "NameIndex"
-    hash_key           = "name"
-    range_key          = "views"
-    write_capacity     = 10
-    read_capacity      = 10
-    projection_type    = "INCLUDE"
-    non_key_attributes = ["id"]
-  }
-
   tags                        = var.tags
 }
