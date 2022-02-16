@@ -13,6 +13,13 @@ foo@bar:~$ terraform -v
 foo@bar:~$ aws --version
 ```
 
+### Configure aws
+```console
+foo@bar:~$ aws configure
+```
+Follow the prompts to input your AWS Access Key ID and Secret Access Key.
+Access keys can be created [here](https://console.aws.amazon.com/iam/home?#/security_credentials)
+
 ## Usage
 ### Initialize the project and prepare your working directory for other commands
 ```console
