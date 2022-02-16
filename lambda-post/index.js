@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
     try {
         await dynamo.put({ TableName: 'tasks', Item: eventBody }).promise();
         body = {
-            message: 'ok'
+            message: 'The task has been created successfully'
         }
     } catch (err) {
         statusCode = '400';
